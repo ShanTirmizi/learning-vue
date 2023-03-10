@@ -26,7 +26,7 @@
       <input type="text" v-bind:value="name" v-on:input="setName($event, 'Schwarzmüller')">
       <!-- two way binding -->
       <input type="text" v-model="name">
-      <p>Your Name: {{ outputFullname() }}</p>
+      <p>Your Name: {{ fullname }}</p>
     </section>
   </body>
 </html>
