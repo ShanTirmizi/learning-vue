@@ -14,13 +14,17 @@
   </head>
   <body>
     <header>
-      <h1>Vue Course Goals</h1>
+      <h1>Vue Events</h1>
     </header>
-    <section id="user-goal">
-      <h2>My Course Goal</h2>
-      <p>{{ testOutput() }}</p>
-      <!-- v-bing tels vue to set the value of something in this case that is the href -->
-      <p>Teach me more <a v-bind:href="link">about vue</a></p>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <!-- V-on is used for when you want to react on something -->
+      <button v-on:click="add()">Add</button>
+      <button v-on:click="reduce">Reduce</button>
+      <p>Result: {{ counter }}</p>
+      <input type="text"v-bind:value="name"
+      v-on:input="updateName" />
+      <p>{{ name }}</p>
     </section>
   </body>
 </html>
