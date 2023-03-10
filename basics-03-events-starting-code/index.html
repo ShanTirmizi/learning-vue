@@ -22,9 +22,22 @@
       <button v-on:click="add()">Add</button>
       <button v-on:click="reduce">Reduce</button>
       <p>Result: {{ counter }}</p>
+      <!-- explain $(event) -->
+      <!-- <button v-on:click="showName($event, 'hello')">Show Name</button> -->
       <input type="text"v-bind:value="name"
       v-on:input="updateName" />
       <p>{{ name }}</p>
+      <!-- This is an event modifier -->
+      <form v-on:submit.prevent ="submitForm">
+        <input type="text" />
+        <button type="submit">Submit</button>
+      </form>
+      <input
+        type="text"
+        v-on:input="submitForm($event, 'Tirmizi')"
+        v-on:keyup.enter="updateName"
+      />
+      <p>{{ confirmedName }}</p>
     </section>
   </body>
 </html>
