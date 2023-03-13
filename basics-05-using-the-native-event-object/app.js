@@ -5,7 +5,18 @@ const app = Vue.createApp({
       name: ''
     };
   },
-  // Dont get useless re render
+  // This is like use effect but for Vue
+  watch: {
+    counter(value) {
+      if (value > 50) {
+        const that = this;
+        setTimeout(function() {
+          that.counter = 0;
+        }, 2000);
+      }
+    }
+  },
+  // Dont get useless re render  ( Computed are like useMemo)
   computed:{
     fullname() {
       if(this.name === ''){
